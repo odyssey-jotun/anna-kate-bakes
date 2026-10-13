@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Anna Kate's Starter Recipes</title>
+<style>
+@font-face{ font-family:'Fredoka'; font-weight:500 700; src:url(../fonts/fredoka.woff2) format('woff2'); }
+@font-face{ font-family:'Nunito Sans'; font-weight:400 800; src:url(../fonts/nunito-sans.woff2) format('woff2'); }
+@page{ size: Letter; margin: 0; }
+*{ box-sizing: border-box; }
+body{ margin:0; font-family:'Nunito Sans', sans-serif; color:#2A160D; font-size:12.5pt; line-height:1.5; }
+.page{ width:8.5in; height:11in; padding:0.6in 0.7in; display:flex; flex-direction:column; justify-content:space-between;
+  gap:0.24in; page-break-after:always; background:#FFF7EE; position:relative; overflow:hidden; }
+.page:last-child{ page-break-after:auto; }
+h1,h2,h3{ font-family:'Fredoka', sans-serif; font-weight:600; margin:0 0 0.25em; line-height:1.1; }
+h1{ font-size:34pt; }
+h1 span{ color:#A8345C; }
+h2{ font-size:24pt; }
+h3{ font-size:14pt; color:#5A2E1C; }
+p{ margin:0 0 0.6em; }
+.top{ display:grid; grid-template-columns:1fr 2.3in; gap:0.4in; align-items:center; }
+.top img{ width:2.3in; height:2.875in; object-fit:cover; border-radius:18px; display:block; }
+.lede{ font-size:13.5pt; color:#5E4033; }
+.recipe{ display:grid; grid-template-columns:2.8in 1fr; gap:0.4in; background:#fff; border-radius:20px; padding:0.35in; }
+.meta{ color:#A8345C; font-weight:800; font-size:11pt; margin-bottom:10px; }
+ul.ing{ list-style:none; padding:0; margin:0; }
+ul.ing li{ padding:3px 0; font-size:11.5pt; border-bottom:1px solid rgba(42,22,13,.14); }
+ul.ing li:last-child{ border-bottom:0; }
+ol.steps{ margin:0; padding-left:1.2em; }
+ol.steps li{ margin-bottom:6px; }
+.tip{ background:#FCE6EA; border-radius:14px; padding:0.18in 0.22in; }
+.mistakes{ display:grid; grid-template-columns:1fr 1fr; gap:0.16in; margin-top:0.12in; }
+.mistakes div{ background:#fff; border-radius:16px; padding:0.2in 0.24in; border-left:6px solid #F4A9BB; }
+.mistakes p{ margin:0; font-size:11.5pt; }
+.foot{ display:flex; justify-content:space-between; font-size:10pt; color:#8A5A3C; border-top:1px solid rgba(42,22,13,.14); padding-top:10px; }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="top">
+    <div>
+      <h1>Anna Kate's <span>Starter Recipes</span></h1>
+      <p class="lede">Two recipes I learned early and still make all the time, plus the mistakes I made so you can skip them. Everything here uses ingredients almost every kitchen already has.</p>
+    </div>
+    <img src="../images/hero-640.webp" alt="">
+  </div>
+
+  <div class="recipe">
+    <div>
+      <h2>Peanut Butter Cookies</h2>
+      <p class="meta">3 ingredients &middot; 350&deg;F &middot; about 12 minutes</p>
+      <ul class="ing"><li>1 cup peanut butter</li><li>1 cup sugar</li><li>1 egg</li></ul>
+    </div>
+    <div>
+      <h3>Steps</h3>
+      <ol class="steps">
+        <li>Heat the oven to 350&deg;F and line a baking sheet with parchment paper.</li>
+        <li>Add the peanut butter, sugar and egg to a bowl. Scrape every bit of peanut butter off the spoon.</li>
+        <li>Mix until it turns into a dough you can shape.</li>
+        <li>Roll the dough into little balls and set them on the parchment. Press a fork across the tops if you want them to look cute.</li>
+        <li>Bake for about 12 minutes.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="tip">
+    <h3>What the dough should look like</h3>
+    <p>Thick enough to roll into a ball that keeps its shape. If it's runny, add a little more sugar. We're making cookies, and a runny dough bakes into a puddle.</p>
+  </div>
+
+  <div class="foot"><span>Anna Kate Bakes</span><span>Anna Kate Huneycutt</span></div>
+</section>
+
+<section class="page">
+  <div class="recipe">
+    <div>
+      <h2>Chocolate Mug Cake</h2>
+      <p class="meta">One mug &middot; microwave &middot; about 2 minutes</p>
+      <ul class="ing"><li>3 tbsp flour</li><li>2 tbsp cocoa powder</li><li>2 tbsp sugar</li><li>&frac12; tsp baking powder</li><li>&frac12; tsp baking soda</li><li>&frac14; cup milk</li><li>Chocolate chips, if you want them</li></ul>
+    </div>
+    <div>
+      <h3>Steps</h3>
+      <ol class="steps">
+        <li>Add the flour, cocoa powder and sugar to a microwave-safe mug.</li>
+        <li>Add the baking powder and baking soda. These are teaspoons.</li>
+        <li>Pour in the milk and stir until the batter is smooth and liquidy.</li>
+        <li>Drop in a few chocolate chips, just for funsies.</li>
+        <li>Microwave for about 2 minutes.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div>
+    <h2>Mistakes I've made, so you don't have to</h2>
+    <div class="mistakes">
+      <div><h3>Tablespoons or teaspoons?</h3><p>They look almost the same on a recipe. A tablespoon is three times bigger. I still double-check every single time.</p></div>
+      <div><h3>Baking powder or baking soda?</h3><p>I grabbed baking powder instead of baking soda once, and my cookies came out completely flat. Read the label twice.</p></div>
+      <div><h3>Cookie dough too runny</h3><p>Add a little more sugar until it holds a shape. If it pours, it's a cake batter.</p></div>
+      <div><h3>A recipe flopped</h3><p>Everyone fails the first time. Start over. You improve with every batch.</p></div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <h3>Coming next</h3>
+    <p>Chocolate chip cookies. Watch for the video on the site.</p>
+  </div>
+
+  <div class="foot"><span>Anna Kate Bakes</span><span>Anna Kate Huneycutt</span></div>
+</section>
+
+</body>
+</html>

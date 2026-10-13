@@ -1,0 +1,185 @@
+@font-face{ font-family:'Fredoka'; font-style:normal; font-weight:500 700; font-display:swap; src:url(fonts/fredoka.woff2) format('woff2'); }
+@font-face{ font-family:'Nunito Sans'; font-style:normal; font-weight:400 800; font-display:swap; src:url(fonts/nunito-sans.woff2) format('woff2'); }
+/* ------------------------------------------------------------------
+   Anna Kate Bakes. Palette from her videos: frosting pink, chocolate,
+   cream, and the butcher-block counter in her kitchen.
+   ------------------------------------------------------------------ */
+:root{
+  --bg:        #FFF7EE;  /* cream */
+  --bg-pink:   #FCE6EA;  /* frosting, light */
+  --bg-wood:   #F3E3C7;  /* butcher block */
+  --card:      #FFFFFF;
+  --ink:       #2A160D;  /* dark chocolate */
+  --ink-soft:  #5E4033;
+  --choc:      #5A2E1C;  /* milk chocolate, buttons */
+  --choc-dk:   #3A1E12;
+  --pink:      #F4A9BB;  /* frosting, fills only */
+  --pink-dk:   #A8345C;  /* text-safe pink */
+  --line:      rgba(42,22,13,0.14);
+  --radius: 18px;
+  --radius-lg: 28px;
+  --wrap: 1080px;
+  --flow-tight: 0.3em;
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+body{
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: 'Nunito Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3{
+  font-family: 'Fredoka', ui-rounded, 'Nunito Sans', sans-serif;
+  font-weight: 600; line-height: 1.12; margin: 0 0 var(--flow-tight); color: var(--ink);
+}
+h1{ font-size: clamp(2.1rem, 4.6vw, 3.1rem); letter-spacing: -0.01em; }
+h2{ font-size: clamp(1.75rem, 3.6vw, 2.5rem); }
+h3{ font-size: 1.3rem; }
+p{ margin: 0 0 1em; }
+p:last-child{ margin-bottom: 0; }
+img{ max-width: 100%; height: auto; display: block; }
+a{ color: inherit; }
+.wrap{ max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+section{ padding: 88px 0; }
+.band{ background: var(--bg-pink); }
+.wood{ background: var(--bg-wood); }
+.center{ text-align: center; }
+.section-head{ max-width: 720px; margin: 0 auto 44px; }
+.section-head p{ color: var(--ink-soft); font-size: 1.1rem; }
+
+.skip{ position: absolute; left: -9999px; top: 10px; background: var(--card); padding: 12px 18px;
+  border-radius: 12px; z-index: 100; font-weight: 700; border: 2px solid var(--choc); }
+.skip:focus{ left: 16px; }
+a:focus-visible, button:focus-visible, video:focus-visible{ outline: 3px solid var(--pink-dk); outline-offset: 3px; }
+
+/* nav */
+nav.site{ position: sticky; top: 0; z-index: 20; background: rgba(255,247,238,0.96);
+  border-bottom: 1px solid var(--line); }
+nav.site .wrap{ display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-top: 10px; padding-bottom: 10px; }
+.wordmark{ display: inline-flex; align-items: center; gap: 10px; font-family: 'Fredoka', sans-serif;
+  font-weight: 600; font-size: 1.35rem; color: var(--ink); text-decoration: none; min-height: 44px; white-space: nowrap; }
+.wordmark .mark{ width: 32px; height: 32px; flex: none; }
+.wordmark .last{ color: var(--pink-dk); }
+nav.site ul{ list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; font-weight: 700; font-size: 0.98rem; }
+nav.site ul a{ display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px;
+  text-decoration: none; color: var(--ink-soft); white-space: nowrap; transition: color .15s ease; }
+nav.site ul a:hover{ color: var(--pink-dk); }
+
+/* buttons */
+.btn{ display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px;
+  background: var(--choc); color: #FFF; text-decoration: none; font-weight: 800; font-size: 1.05rem;
+  padding: 12px 30px; border-radius: 12px; transition: background-color .18s ease; }
+.btn:hover{ background: var(--pink-dk); }
+.btn svg{ width: 20px; height: 20px; }
+.btn-row{ display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 32px; }
+.btn-note{ margin-top: 12px; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* hero */
+.hero{ padding: 56px 0 80px; }
+.hero .wrap{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.hero .lede{ font-size: 1.2rem; color: var(--ink-soft); margin-top: 18px; }
+.hero-text{ text-align: center; }
+.hero-photo{ margin: 0; }
+.hero-photo img{ border-radius: var(--radius-lg); width: 100%; }
+
+/* problem */
+.cards{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card{ background: var(--card); border-radius: var(--radius); padding: 30px 28px; border: 1px solid var(--line); }
+.icon{ width: 56px; height: 56px; border-radius: 16px; background: var(--bg-pink); color: var(--choc);
+  display: grid; place-items: center; margin-bottom: 18px; }
+.band .icon{ background: var(--bg-wood); }
+.icon svg{ width: 30px; height: 30px; }
+.card p{ color: var(--ink-soft); }
+.research{ max-width: 820px; margin: 48px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.research figure{ margin: 0; background: var(--card); border-radius: var(--radius); padding: 24px 26px; border-left: 6px solid var(--pink); }
+.research blockquote{ margin: 0 0 10px; font-size: 1.05rem; }
+.research figcaption{ font-size: 0.9rem; color: var(--ink-soft); }
+.punch{ text-align: center; font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 1.45rem;
+  max-width: 720px; margin: 48px auto 0; color: var(--choc); }
+
+/* guide */
+.split{ display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.photo{ margin: 0; }
+.photo img{ border-radius: var(--radius); width: 100%; }
+.name-line{ font-size: 1.2rem; font-weight: 700; color: var(--choc); }
+.quote{ font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 1.3rem; line-height: 1.4;
+  margin: 0 0 1em; padding-left: 20px; border-left: 5px solid var(--pink); color: var(--ink); }
+.made{ list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px 18px; }
+.made li{ display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.made svg{ width: 24px; height: 24px; color: var(--pink-dk); flex: none; }
+.intro-video{ margin-top: 64px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; }
+
+/* video */
+.video{ margin: 0; }
+.video video{ width: 100%; height: auto; aspect-ratio: 9 / 16; border-radius: var(--radius); background: var(--choc-dk); display: block; }
+
+/* plan */
+.steps{ list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.steps li{ background: var(--card); border-radius: var(--radius); padding: 30px 28px; text-align: center; }
+.steps .icon{ margin: 0 auto 16px; }
+.steps p{ color: var(--ink-soft); }
+.promise{ text-align: center; font-size: 1.15rem; max-width: 640px; margin: 40px auto 0; }
+
+/* recipes */
+.recipes{ display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 880px; margin: 0 auto; }
+.recipe{ background: var(--card); border-radius: var(--radius-lg); padding: 28px; display: grid;
+  grid-template-columns: 280px 1fr; gap: 36px; align-items: center; }
+.recipe .meta{ display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--pink-dk); font-weight: 800; font-size: 0.95rem; margin-bottom: 14px; }
+.recipe ul{ list-style: none; padding: 0; margin: 0 0 16px; }
+.recipe ul li{ padding: 6px 0; border-bottom: 1px solid var(--line); }
+.recipe ul li:last-child{ border-bottom: 0; }
+.tip{ background: var(--bg-pink); border-radius: 12px; padding: 14px 16px; font-size: 0.98rem; }
+.next{ text-align: center; margin-top: 36px; color: var(--ink-soft); font-size: 1.1rem; }
+
+/* success + stakes */
+.before-after{ display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+.before-after div{ background: var(--card); border-radius: var(--radius); padding: 22px 24px; }
+.before-after h3{ font-size: 1.1rem; }
+.before-after p{ color: var(--ink-soft); }
+.stakes{ display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.stake{ background: var(--card); border-radius: var(--radius); padding: 30px 28px; }
+.outcomes{ list-style: none; padding: 0; margin: 14px 0 0; }
+.outcomes li{ display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; }
+.outcomes svg{ width: 22px; height: 22px; flex: none; margin-top: 4px; }
+.stake .x svg{ color: #8A5A3C; }
+.stake.good{ background: var(--choc); color: #FFF7EE; }
+.stake.good h3{ color: #FFF; }
+.stake.good svg{ color: var(--pink); }
+
+/* closing */
+.closing{ text-align: center; }
+.closing .wrap{ max-width: 760px; }
+.closing p{ font-size: 1.15rem; color: var(--ink-soft); }
+
+/* sources + footer */
+.refs{ padding: 48px 0; font-size: 0.92rem; color: var(--ink-soft); }
+.refs h2{ font-size: 1.2rem; }
+.refs ol{ margin: 10px 0 0; padding-left: 20px; }
+footer{ background: var(--choc-dk); color: #F6E6DA; padding: 36px 0; font-size: 0.95rem; }
+footer p{ margin: 0; }
+
+/* motion: one crisp fade-in, nothing ambient */
+.reveal{ opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+.reveal.in{ opacity: 1; transform: none; }
+
+@media (max-width: 900px){
+  .hero .wrap, .split, .intro-video{ grid-template-columns: 1fr; gap: 32px; }
+  .hero-photo{ order: -1; max-width: 520px; }
+  .cards, .steps, .recipes, .stakes, .research, .before-after{ grid-template-columns: 1fr; }
+  .intro-video .video{ max-width: 300px; margin: 0 auto; }
+}
+@media (max-width: 620px){
+  .wrap{ padding: 0 20px; }
+  section{ padding: 64px 0; }
+  .hero{ padding: 24px 0 56px; }
+  .recipe{ grid-template-columns: 1fr; padding: 22px; }
+  .recipe .video{ max-width: 280px; margin: 0 auto; width: 100%; }
+  nav.site ul .x{ display: none; }
+  .wordmark{ font-size: 1.2rem; }
+}
