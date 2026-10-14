@@ -40,6 +40,9 @@ I_BOWL = svg('<path d="M6 22h36c0 10-8 17-18 17S6 32 6 22z"/><path d="M30 22l9-1
 I_COOKIE = svg('<circle cx="24" cy="24" r="17"/><circle cx="18" cy="19" r="1.8"/><circle cx="28" cy="17" r="1.6"/>'
                '<circle cx="30" cy="28" r="2"/><circle cx="19" cy="30" r="1.6"/>')
 I_SPOON = svg('<ellipse cx="17" cy="15" rx="7" ry="9" transform="rotate(-35 17 15)"/><path d="M22 22l18 18"/>')
+I_SPROUT = svg('<path d="M24 42V22"/><path d="M24 26c0-8-6-12-14-12 0 8 6 12 14 12zM24 22c0-7 5-11 12-11 0 7-5 11-12 11z"/>')
+I_SMILE = svg('<circle cx="24" cy="24" r="17"/><path d="M17 28c2 3 4.5 4.5 7 4.5s5-1.5 7-4.5"/><path d="M18 19v1M30 19v1"/>')
+I_CLOCK = svg('<circle cx="24" cy="24" r="17"/><path d="M24 14v10l7 5"/>')
 CHECK = svg('<path d="M10 25l9 9 19-20"/>', "3.4")
 CROSS = svg('<path d="M14 14l20 20M34 14L14 34"/>', "3.4")
 DOWN = svg('<path d="M24 8v24M14 23l10 10 10-10M10 40h28"/>', "3.4")
@@ -139,6 +142,7 @@ def page():
     <ul>
       <li><a href="#recipes"><span>Recipes</span></a></li>
       <li><a href="#bloopers"><span>Bloopers</span></a></li>
+      <li class="x"><a href="#research"><span>Research</span></a></li>
       <li class="x"><a href="#about"><span>About Anna Kate</span></a></li>
     </ul>
   </div>
@@ -182,16 +186,7 @@ def page():
         <p>Nobody should feel bad about missing on the first try. Every good baker has a flat batch somewhere in their past.</p>
       </div>
     </div>
-    <div class="research">
-      <figure>
-        <blockquote>Adults who learned to cook before age 18 reported more cooking skills, more confidence and better diet quality than people who learned later.</blockquote>
-        <figcaption>Lavelle and colleagues, 2016</figcaption>
-      </figure>
-      <figure>
-        <blockquote>Across 23 randomized trials, kids' cooking programs reliably raised confidence and know-how in the kitchen.</blockquote>
-        <figcaption>Systematic review of cooking programs for children, 2024</figcaption>
-      </figure>
-    </div>
+  </div>
   </div>
 </section>
 
@@ -223,6 +218,36 @@ def page():
       <p class="says">&ldquo;When I follow a recipe and it tastes good, I invite my friends over and they think I'm useful and cool. When I bake trash, I don't tell them. And you don't have to tell yours either.&rdquo;</p>
     </div>
     {video("bloopers", "Baking Bloopers: Anna Kate's blooper reel", "")}
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="section-head center">
+      <h2>The research behind a mug cake</h2>
+      <p>These studies look at cooking in general, and baking is one kind of cooking. They show strong links between cooking and a better life, though not proof that baking alone causes each result.</p>
+    </div>
+    <div class="findings">
+      <div class="theme reveal">
+        <div class="icon">{I_SPROUT}</div>
+        <h3>Habits that last</h3>
+        <div class="finding"><p class="stat">1,158 young adults</p><p>People who rated their cooking skills as very adequate at ages 18 to 23 cooked more meals with vegetables and ate fast food less often 10 years later.</p><p class="src">Project EAT, Utter and colleagues, 2018</p></div>
+        <div class="finding"><p class="stat">Before age 18</p><p>Adults who learned to cook as kids reported more cooking skills, more confidence and better diet quality than people who learned later.</p><p class="src">Lavelle and colleagues, 2016</p></div>
+      </div>
+      <div class="theme reveal">
+        <div class="icon">{I_SMILE}</div>
+        <h3>Confidence and mood</h3>
+        <div class="finding"><p class="stat">23 trials</p><p>Across 23 randomized trials of kids' cooking programs, the result that showed up again and again was more confidence and know-how in the kitchen.</p><p class="src">van der Horst and colleagues, 2024</p></div>
+        <div class="finding"><p class="stat">12 months later</p><p>Teens ages 12 to 15 in a New Zealand cooking program felt better right after it, and their cooking confidence was still there a year later.</p><p class="src">Create-Our-Own Kai trial</p></div>
+        <div class="finding"><p class="stat">Lower stress</p><p>In a small pilot study, adults' anxiety and cortisol levels dropped after baking. It had no control group, so treat it as a promising start.</p><p class="src">Pratt Institute baking pilot, 2019</p></div>
+      </div>
+      <div class="theme reveal">
+        <div class="icon">{I_CLOCK}</div>
+        <h3>Later in life</h3>
+        <div class="finding"><p class="stat">41% lower risk</p><p>Adults over 65 in Taiwan who cooked more than five times a week were 41% less likely to die over the next ten years than those who never cooked, after accounting for their health.</p><p class="src">Chen and colleagues, Taiwan, 2012</p></div>
+        <div class="finding"><p class="stat">10,978 older adults</p><p>In Japan, adults over 65 who cooked from scratch at least once a week had a 23% (men) to 27% (women) lower risk of dementia over about six years.</p><p class="src">Japan Gerontological Evaluation Study, 2026</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -310,8 +335,13 @@ def page():
   <div class="wrap">
     <h2>Sources</h2>
     <ol>
+      <li>Utter, J., et al. "Self-Perceived Cooking Skills in Emerging Adulthood Predict Better Dietary Behaviors and Intake 10 Years Later: A Longitudinal Study." <em>Journal of Nutrition Education and Behavior</em>, 2018.</li>
       <li>Lavelle, F., et al. "Learning cooking skills at different ages: a cross-sectional study." <em>International Journal of Behavioral Nutrition and Physical Activity</em>, 2016.</li>
-      <li>Systematic review of 23 randomized controlled trials of cooking interventions for children, 2024.</li>
+      <li>van der Horst, K., et al. "Outcomes of children's cooking programs: a systematic review of intervention studies." 2024.</li>
+      <li>Create-Our-Own Kai randomised controlled trial of an intensive cooking program for adolescents, Dunedin, New Zealand.</li>
+      <li>Cho, J. "Impacts of Baking as Art Therapy on Stress and Anxiety in Adults." Pratt Institute, 2019.</li>
+      <li>Chen, R. C.-Y., et al. "Cooking frequency may enhance survival in Taiwanese elderly." <em>Public Health Nutrition</em>, 2012.</li>
+      <li>Japan Gerontological Evaluation Study cohort on home cooking and dementia. <em>Journal of Epidemiology &amp; Community Health</em>, 2026.</li>
     </ol>
   </div>
 </section>
