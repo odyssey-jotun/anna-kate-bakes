@@ -21,6 +21,6 @@ Website for Anna Kate Huneycutt's baking project: short recipe videos, a blooper
 - Site name: "Baking Bloopers" (Marc, 2026-10-13). Her answer was "annakates baking page (I don't really know)". The repo and URL are still `anna-kate-bakes`.
 - Button text: she asked for "download recipe video"; the button says "Download the Recipe Guide" because it downloads the PDF.
 - Free guide contents: her form left this blank. The PDF uses her two recipes plus mistakes from her own answers (tablespoon vs teaspoon, baking powder vs soda) and her video tips (runny cookie dough, liquidy mug cake batter).
-- Written for her, needs her OK: the plan step descriptions, the stakes "with" list, and the blooper section text. Quotes in pink are her own words from the videos.
+- Written for her, needs her OK: the plan step descriptions, the stakes "with" list, and the first-person blooper section. Pink quotes on the recipe cards are her own words from the videos; "I bake to not feel like a moron" and the "bake trash" quote come from Marc's Video Guidelines tab, not from her.
 - Blooper reel: `videos/bloopers.mp4` is a 720p copy of `edited/bloopers.mp4` from `odyssey-jotun/huneycutt` (built by `video-build/bloopers/build_bloopers.py`).
 - Chocolate chip cookies are listed as coming next.

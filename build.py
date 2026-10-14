@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds index.html for Anna Kate Bakes.
+"""Builds index.html for Baking Bloopers.
 
 Run: python3 build.py
 SITE_NAME is Marc's pick, "Baking Bloopers" (her form said "annakates baking
@@ -199,7 +199,7 @@ def page():
   <div class="wrap split">
     <div>
       <h2>A high school senior who still double-checks the teaspoons</h2>
-      <p class="name-line">I'm Anna Kate, and I know the panic of a recipe you're scared to mess up.</p>
+      <p class="name-line">I'm Anna Kate, and I bake to not feel like a moron.</p>
       <p class="quote">I used to freak out because I'd forget if it was 2 tablespoons or 2 teaspoons. I still double-check every time, because I'm so afraid of messing up.</p>
       <p>I've been baking since seventh grade. One time I put baking powder in my cookies instead of baking soda, and they came out completely flat. You just start over until it turns out right.</p>
       <ul class="made" aria-label="Things Anna Kate has baked">{made}</ul>
@@ -219,9 +219,8 @@ def page():
   <div class="wrap intro-video flip">
     <div>
       <h2>The bloopers stay in</h2>
-      <p>A sneeze into the sugar. An energy drink break in the middle of the cookie dough. A mug cake made in honor of the Queen of Country herself.</p>
-      <p>Every baker messes up. Anna Kate keeps the camera rolling, so nobody watching has to feel bad about their own flat batch.</p>
-      <p class="says">&ldquo;So as we pretend that I didn't just sneeze&hellip;&rdquo;</p>
+      <p>I sneezed into the sugar. I took an energy drink break in the middle of the cookie dough. I made a mug cake in honor of the Queen of Country herself. I kept all of it.</p>
+      <p class="says">&ldquo;When I follow a recipe and it tastes good, I invite my friends over and they think I'm useful and cool. When I bake trash, I don't tell them. And you don't have to tell yours either.&rdquo;</p>
     </div>
     {video("bloopers", "Baking Bloopers: Anna Kate's blooper reel", "")}
   </div>
