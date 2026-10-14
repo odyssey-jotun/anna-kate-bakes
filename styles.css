@@ -114,6 +114,8 @@ nav.site ul a:hover{ color: var(--pink-dk); }
 .made li{ display: flex; align-items: center; gap: 10px; font-weight: 700; }
 .made svg{ width: 24px; height: 24px; color: var(--pink-dk); flex: none; }
 .intro-video{ margin-top: 64px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; }
+#bloopers .intro-video{ margin-top: 0; grid-template-columns: 1fr 320px; gap: 56px; max-width: 900px; }
+.says{ font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 1.15rem; color: var(--pink-dk); margin-bottom: 14px; }
 
 /* video */
 .video{ margin: 0; }
@@ -173,6 +175,7 @@ footer p{ margin: 0; }
   .hero-photo{ order: -1; max-width: 520px; }
   .cards, .steps, .recipes, .stakes, .research, .before-after{ grid-template-columns: 1fr; }
   .intro-video .video{ max-width: 300px; margin: 0 auto; }
+  #bloopers .intro-video{ grid-template-columns: 1fr; }
 }
 @media (max-width: 620px){
   .wrap{ padding: 0 20px; }

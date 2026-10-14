@@ -1,6 +1,6 @@
-# Anna Kate Bakes
+# Baking Bloopers
 
-Website for Anna Kate Huneycutt's baking project: short recipe videos, recipe cards, and a free two-page recipe guide. Built on the StoryBrand wireframe from her answers on the StoryBrand Form tab of her College & Scholarship Plan doc (filled in 2026-10-13). The videos are the edits from `odyssey-jotun/huneycutt`.
+Website for Anna Kate Huneycutt's baking project: short recipe videos, a blooper reel, recipe cards, and a free two-page recipe guide. Built on the StoryBrand wireframe from her answers on the StoryBrand Form tab of her College & Scholarship Plan doc (filled in 2026-10-13). The videos are the edits from `odyssey-jotun/huneycutt`.
 
 ## Files
 
@@ -18,8 +18,9 @@ Website for Anna Kate Huneycutt's baking project: short recipe videos, recipe ca
 
 ## Open
 
-- Site name: "Anna Kate Bakes" is a working name. Her answer was "annakates baking page (I don't really know)". Change `SITE_NAME` in `build.py`.
+- Site name: "Baking Bloopers" (Marc, 2026-10-13). Her answer was "annakates baking page (I don't really know)". The repo and URL are still `anna-kate-bakes`.
 - Button text: she asked for "download recipe video"; the button says "Download the Recipe Guide" because it downloads the PDF.
 - Free guide contents: her form left this blank. The PDF uses her two recipes plus mistakes from her own answers (tablespoon vs teaspoon, baking powder vs soda) and her video tips (runny cookie dough, liquidy mug cake batter).
-- Written for her, needs her OK: the line under the intro video ("If I sneeze into the flour, it stays in..."), the plan step descriptions, and the stakes "with" list.
+- Written for her, needs her OK: the plan step descriptions, the stakes "with" list, and the blooper section text. Quotes in pink are her own words from the videos.
+- Blooper reel: `videos/bloopers.mp4` is a 720p copy of `edited/bloopers.mp4` from `odyssey-jotun/huneycutt` (built by `video-build/bloopers/build_bloopers.py`).
 - Chocolate chip cookies are listed as coming next.

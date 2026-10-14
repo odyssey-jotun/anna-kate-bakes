@@ -2,14 +2,14 @@
 """Builds index.html for Anna Kate Bakes.
 
 Run: python3 build.py
-SITE_NAME is a working name (her form said "annakates baking page (I don't
-really know)"). Change it here and rebuild; every title and heading follows.
+SITE_NAME is Marc's pick, "Baking Bloopers" (her form said "annakates baking
+page (I don't really know)"). Change it here and rebuild; titles follow.
 Copy comes from her StoryBrand Form answers and her own video voiceovers.
 """
 import json
 import re
 
-SITE_NAME = "Anna Kate Bakes"
+SITE_NAME = "Baking Bloopers"
 AUTHOR = "Anna Kate Huneycutt"
 SITE = "https://odyssey-jotun.github.io/anna-kate-bakes/"
 GUIDE = "guide/anna-kate-starter-recipes.pdf"
@@ -47,12 +47,14 @@ DOWN = svg('<path d="M24 8v24M14 23l10 10 10-10M10 40h28"/>', "3.4")
 BAKED = ["Cookies", "Pies", "Muffins", "Cakes", "Cake pops"]
 
 RECIPES = [
-    dict(id="peanut-butter-cookies", name="Peanut Butter Cookies", meta=["3 ingredients", "350&deg;F", "About 12 minutes"],
+    dict(id="peanut-butter-cookies", name="Peanut Butter Cookies",
+         says="This recipe is super duper simple, and it's so good for just an after-school snack.", meta=["3 ingredients", "350&deg;F", "About 12 minutes"],
          items=["1 cup peanut butter", "1 cup sugar", "1 egg"],
          steps="Mix everything in one bowl, roll the dough into little balls on parchment paper, and bake at 350&deg; for about 12 minutes. Press a fork across the top first if you want them to look cute.",
          tip="The dough should hold a cookie shape. If it's runny, add a little more sugar: these are cookies, not a cake.",
          poster="Anna Kate holding a jar of peanut butter in her kitchen"),
-    dict(id="chocolate-mug-cake", name="Chocolate Mug Cake", meta=["One mug", "Microwave", "About 2 minutes"],
+    dict(id="chocolate-mug-cake", name="Chocolate Mug Cake",
+         says="Nothing says ambition like a chocolate mug cake.", meta=["One mug", "Microwave", "About 2 minutes"],
          items=["3 tbsp flour", "2 tbsp cocoa powder", "2 tbsp sugar", "&frac12; tsp baking powder",
                 "&frac12; tsp baking soda", "&frac14; cup milk", "Chocolate chips, if you want them"],
          steps="Stir everything together right in the mug, drop in a few chocolate chips, and microwave for about 2 minutes.",
@@ -76,6 +78,7 @@ def recipe_card(r):
         <div>
           <h3>{r['name']}</h3>
           <p class="meta">{meta}</p>
+          <p class="says">&ldquo;{r['says']}&rdquo;</p>
           <ul>{lis}</ul>
           <p>{r['steps']}</p>
           <p class="tip">{r['tip']}</p>
@@ -84,8 +87,8 @@ def recipe_card(r):
 
 
 def page():
-    title = f"Easy Baking Recipes for Beginners | {SITE_NAME}"
-    desc = ("Simple baking videos and recipes from Anna Kate Huneycutt: three-ingredient peanut butter cookies, "
+    title = f"{SITE_NAME} | Easy Baking Recipes for Beginners"
+    desc = ("Simple, slightly awkward baking videos and recipes from Anna Kate Huneycutt: three-ingredient peanut butter cookies, "
             "a two-minute chocolate mug cake, and the beginner mistakes to skip. Free recipe guide.")
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebSite", "@id": SITE + "#site", "url": SITE, "name": SITE_NAME, "inLanguage": "en-US",
@@ -135,7 +138,8 @@ def page():
     <a class="wordmark" href="./">{MARK}<span>{first[0]} <span class="last">{first[1]}</span></span></a>
     <ul>
       <li><a href="#recipes"><span>Recipes</span></a></li>
-      <li><a href="#about"><span><span class="x">About </span>Anna Kate</span></a></li>
+      <li><a href="#bloopers"><span>Bloopers</span></a></li>
+      <li class="x"><a href="#about"><span>About Anna Kate</span></a></li>
     </ul>
   </div>
 </nav>
@@ -146,7 +150,7 @@ def page():
   <div class="wrap">
     <div class="hero-text">
       <h1>Easy baking for anyone who wants to make something good today</h1>
-      <p class="lede">Short recipe videos from {AUTHOR}, a high school senior who has baked since seventh grade. Each recipe takes a few ingredients from an ordinary kitchen and very little time.</p>
+      <p class="lede">Short recipe videos from {AUTHOR}, a high school senior who has baked since seventh grade. Each recipe takes a few ingredients and very little time, and the bloopers stay in.</p>
       <div class="btn-row">
         <a href="{GUIDE}" class="btn" download>{DOWN}Download the Recipe Guide</a>
       </div>
@@ -205,9 +209,21 @@ def page():
   <div class="wrap intro-video">
     {video("intro", "Anna Kate's introduction video", "")}
     <div>
-      <h3>After school, after tests, after cheer practice</h3>
-      <p>My videos are short, a little awkward, and honest about the parts that go wrong. If I sneeze into the flour, it stays in. Baking is supposed to be fun, and nobody does it perfectly.</p>
+      <h3>&ldquo;Ever wonder what a high school senior does after school?&rdquo;</h3>
+      <p>After tests, cheer practices, and girl drama, I bake. So come a little closer.</p>
     </div>
+  </div>
+</section>
+
+<section class="band" id="bloopers">
+  <div class="wrap intro-video flip">
+    <div>
+      <h2>The bloopers stay in</h2>
+      <p>A sneeze into the sugar. An energy drink break in the middle of the cookie dough. A mug cake made in honor of the Queen of Country herself.</p>
+      <p>Every baker messes up. Anna Kate keeps the camera rolling, so nobody watching has to feel bad about their own flat batch.</p>
+      <p class="says">&ldquo;So as we pretend that I didn't just sneeze&hellip;&rdquo;</p>
+    </div>
+    {video("bloopers", "Baking Bloopers: Anna Kate's blooper reel", "")}
   </div>
 </section>
 
@@ -305,7 +321,7 @@ def page():
 
 <footer>
   <div class="wrap">
-    <p>{SITE_NAME} by {AUTHOR}.</p>
+    <p>{SITE_NAME} by {AUTHOR}. Made with just a few ingredients and a cup of ambition.</p>
   </div>
 </footer>
 
